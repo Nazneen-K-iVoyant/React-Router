@@ -1,0 +1,22 @@
+Configuring Routes
+
+Step 1: Wrap the root component of the app with BrowserRouter from the react-router-dom package  ---> Here we wrapped <App/> component with browser router 
+Step 2: Create the component that need to be rendered at different url parts  ---> Here we created <Home/> and <About/>
+Step 3: Configure the routes using the <Routes/> and <Route/> component  from react-router, <Routes/> at the top level which can contain multiple route components. Each <Route/> will accept a 'path' prop  which corresponds to the path in the browser url  and the corresponding react 'element' to render when the path is matched. ---> Here we have set home component for root of the app and about component for the about path.
+
+
+Active Link
+
+- React router provides another component  called nav link  which knows whether or not  it is the active link, we can use that component to style the active link on our nav bar, so instead of <Link/> we use <NavLink/> and import the same.
+- The speciality of the NavLink is that it recieves an active class when the link is the current route, so using that we will style it.
+-<NavLink/> component is specifically meant for building components like a navbar  or breadcrums or a set of tabs where you would like to highlight the current selected item and provide useful context with screen  readers
+
+Lazy loading
+
+- Lazy loading is a technique where conponents not required on the home page can be split into seperate code bundles and downloaded only when the user navgates to that page, you can think of it as incrementally downloading the application,
+    - It helps reduce initial load time thereby improving performance
+
+- To use Lazy loading, use Dynamic imports and suspense
+
+Step 1: use default exports 
+Step 2: We include the lazy component as part of the route configuration
